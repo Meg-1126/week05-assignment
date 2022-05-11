@@ -10,6 +10,22 @@ Not sure where to get started? It might be useful to start by creating a variabl
 
 const checkAir = function (samples, threshold) {
   // Code here!
+  let numOfSample = samples.length; //Get num of elements in an array
+  let dCounter = 0; //Count dirty sample
+  let ratioOfDirtySample = 0; //For storing ratio of dirty sample in an array
+
+  for (let i = 0; i < numOfSample; i++) { //Check num of dirty sample in an array
+    if (samples[i] === 'dirty') {
+       dCounter++;
+    }
+  }
+  ratioOfDirtySample = dCounter / numOfSample; //Calculate ratio
+
+  if (ratioOfDirtySample > threshold) {
+    return 'Polluted';
+  } else {
+    return 'Clean';
+  }
 };
 
 console.log(checkAir(

@@ -15,6 +15,12 @@ For more information on casing styles, read Wikipedia's Special Case Styles for 
 
 */
 
+// [SOLUTION?]
+// Divide a string between words
+// Check casing styles and create the conditions for all of them
+// Convert string based on the casing style
+// Return
+
 const makeCaze = function(input, caze) {
   // Put your solution here
 }

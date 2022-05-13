@@ -20,6 +20,14 @@ Instruction
 Create a function named squareCode that will receive a message, and return the secret square code version of the message.
 */
 
+// [SOLUTION?]
+//1.Get num of words for the string (8 for 1st e.g)
+//2.Use Math.sqrt(numOfWords)
+//3.Round the number you get in #2 up (Math.ceil(Math.sqrt(numberYouGetIn#2)))
+//4.Print letters using loop to create a table (Use the number you got in #3 as num of cols)
+//5.Print letters using another loop, this time, loop checks values vartically 
+//6.Add space when your loop goes to the next col 
+
 const squareCode = function(message) {
   // Put your solution here
 };

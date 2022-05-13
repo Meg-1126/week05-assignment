@@ -65,3 +65,25 @@ Instruction
 Create a function generateBoard which will return a nested array representing the board, containing the location of two queens.
 Create a function called queenThreat that will indicate whether or not the two queens are positioned so that they attack each other.
 */
+
+// [SOLUTION?]
+//In generatedBoard function:
+// 1. Create a chess board(2d array) using nested for loop 
+// 2. In #1, if it's a positon of queen, print 1 instead of 0
+//In queenThreat function:
+// 3. Find two postions of queens using nested for loop?
+// 4. Check which conditions the position should mach
+// 5. Return true or false
+  
+let generatedBoard = function(whiteQueen, blackQueen) {
+    
+};
+
+let queenThreat = function(generatedBoard) {
+
+// condition01(two positions are on the same row, column, or diagonal)
+// return true;
+
+//condition02(two positions are NOT on the same row, column, or diagonal)
+// return false;
+};

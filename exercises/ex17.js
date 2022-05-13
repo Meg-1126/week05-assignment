@@ -21,6 +21,12 @@ Create a function named urlDecode that will receive a URL encoded string, and re
 
 */
 
+// [SOLUTION?]
+// 1.Divide a string between "=", "&"
+// 2.Store divided string to a variable
+// 3.If divided string has "%20" convert it to a space
+// 4.Create an object using the variables #2-3 
+
 const urlDecode = function(text) {
   // Put your solution here
 };

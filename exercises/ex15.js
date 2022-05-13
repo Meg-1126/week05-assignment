@@ -9,8 +9,16 @@ Create a function named organizeInstructors that will receive an array of instru
 */
 
 const organizeInstructors = function(instructors) {
-  // Get course name inside obj of array
-  // Create an obj which has some properties of course name with 
+  // [SOLUTION?]
+  // 1.Get all course names inside obj of array
+  // 2.Find keyname(=instructors' name) which has specific course name in the same obj
+  // 3.Create another array using instructors' name you found in #2
+  // 4.Create an obj which has some keys and assign array of instructors based on keys value
+
+  const courses = {
+    courseName: arrOfInstructors
+
+  } 
 };
 
 console.log(organizeInstructors([

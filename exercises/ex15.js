@@ -9,7 +9,8 @@ Create a function named organizeInstructors that will receive an array of instru
 */
 
 const organizeInstructors = function(instructors) {
-  // Put your solution here
+  // Get course name inside obj of array
+  // Create an obj which has some properties of course name with 
 };
 
 console.log(organizeInstructors([

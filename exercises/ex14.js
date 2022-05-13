@@ -190,7 +190,7 @@ const calculateChange = function(total, cash) {
 }
 
   //Obj
-  let giveBack = {
+  const giveBack = {
     twentyDollarsBill: twentyDollars, 
     tenDollarsBill: tenDollars,
     fiveDollarsBill: fiveDollars,

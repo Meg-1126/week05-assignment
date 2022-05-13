@@ -21,7 +21,23 @@ This one is a doozy! We might want to start by creating a helper function called
 */
 
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-  // Code here!
+    let recipeIngredients = [];
+   for (let i = 0; i < recipes.length; i++) {
+       for (let j = 0; j < 2; j++) {
+           recipeIngredients += recipes[i].ingredients[j]; 
+
+           if (recipeIngredients===bakeryA || recipeIngredients===bakeryB) {
+               let result = bakeryA[i];
+           }
+       }
+   }
+  
+   
+//    if ((bakeryA[i] === recipes[i].ingredients[0]) || (bakeryB[i] === recipes[i].ingredients[0]) && (bakeryA[i] === recipes[i].ingredients[1]) || bakeryB[i] === recipes[i].ingredients[1]) 
+//     { 
+//        return recipes[i].name;
+//     }
+
 }
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
@@ -29,7 +45,7 @@ let bakeryB = ['milk', 'butter', 'cream cheese'];
 let recipes = [
     {
         name: 'Coconut Sponge Cake',
-        ingredients: ['coconut', 'cake base']
+        ingredients: ['coconut', 'cake base'] 
     },
     {
         name: 'Persian Cheesecake',
@@ -43,21 +59,21 @@ let recipes = [
 
 console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Persian Cheesecake
 
-bakeryA = ['potatoes', 'bay leaf', 'raisins'];
-bakeryB = ['red bean', 'dijon mustard', 'apples'];
-recipes = [
-    {
-        name: 'Potato Ganache',
-        ingredients: ['potatoes', 'chocolate']
-    },
-    {
-        name: 'Sweet Fish',
-        ingredients: ['anchovies', 'honey']
-    },
-    {
-        name: "Nima's Famous Dijon Raisins",
-        ingredients: ['dijon mustard', 'raisins']
-    }
-];
+// bakeryA = ['potatoes', 'bay leaf', 'raisins'];
+// bakeryB = ['red bean', 'dijon mustard', 'apples'];
+// recipes = [
+//     {
+//         name: 'Potato Ganache',
+//         ingredients: ['potatoes', 'chocolate']
+//     },
+//     {
+//         name: 'Sweet Fish',
+//         ingredients: ['anchovies', 'honey']
+//     },
+//     {
+//         name: "Nima's Famous Dijon Raisins",
+//         ingredients: ['dijon mustard', 'raisins']
+//     }
+// ];
 
-console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Nima's Famous Dijon Raisins
+// console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Nima's Famous Dijon Raisins

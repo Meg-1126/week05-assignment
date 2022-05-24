@@ -23,14 +23,30 @@ For more information on casing styles, read Wikipedia's Special Case Styles for 
 
 const makeCaze = function(input, caze) {
   // Put your solution here
+  let storeString = "";
+  let test = "";
+  
+  storeString = input.split(" "); //Get  [ 'this', 'is', 'a', 'string' ]
+  
+  if (typeof caze === "object") { //if caze is an array
+    
+  } else { //if caze is a single value
+    switch (caze) {
+     case "camel" :
+       
+      //  test = storeString[0].charAt(0).toUpperCase();
+      //  break;
+    }
+  }
+  return test;
 }
 
 console.log(makeCaze("this is a string", "camel")); // thisIsAString
-console.log(makeCaze("this is a string", "pascal")); // ThisIsAString
-console.log(makeCaze("this is a string", "snake")); // this_is_a_string
-console.log(makeCaze("this is a string", "kebab")); // this-is-a-string
-console.log(makeCaze("this is a string", "title")); // This Is A String
-console.log(makeCaze("this is a string", "vowel")); // thIs Is A strIng
-console.log(makeCaze("this is a string", "consonant")); // THiS iS a STRiNG
-console.log(makeCaze("this is a string", ["upper", "snake"])); // THIS_IS_A_STRING
+// console.log(makeCaze("this is a string", "pascal")); // ThisIsAString
+// console.log(makeCaze("this is a string", "snake")); // this_is_a_string
+// console.log(makeCaze("this is a string", "kebab")); // this-is-a-string
+// console.log(makeCaze("this is a string", "title")); // This Is A String
+// console.log(makeCaze("this is a string", "vowel")); // thIs Is A strIng
+// console.log(makeCaze("this is a string", "consonant")); // THiS iS a STRiNG
+// console.log(makeCaze("this is a string", ["upper", "snake"])); // THIS_IS_A_STRING
 

@@ -8,7 +8,10 @@ Instruction
 Create a function named camelCase that will convert a string to camel case, and return the result.
 */
 
+<<<<<<< HEAD
 // Input
+=======
+>>>>>>> 1010ceb23e9b9723cc108a41cc60d184f28a22ae
 const camelCase = function(input) {
   //get all words in an array
   //make first letter capitalized except for 1st word

@@ -7,7 +7,10 @@ Instruction
 Create a function named multiplicationTable that receives a number maxValue as input and creates a square multiplication table where maxValue is the largest value in the table.
 */
 
+<<<<<<< HEAD
 // Input
+=======
+>>>>>>> 1010ceb23e9b9723cc108a41cc60d184f28a22ae
 const multiplicationTable = function(maxValue) {
   // Your code here
   let table = "";

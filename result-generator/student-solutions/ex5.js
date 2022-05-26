@@ -38,8 +38,8 @@ const urlEncode = function(text) {
 
 
    
-  
+  module.exports = urlEncode;
   //  console.log(urlEncode("cornerstone college")); //cornerstone%20college
-  console.log(urlEncode(" cornerstone college ")); //cornerstone%20college
+  // console.log(urlEncode(" cornerstone college ")); //cornerstone%20college
   // console.log(urlEncode("blue is greener than purple for sure")); 
   // blue%20is%20greener%20than%20purple%20for%20sure

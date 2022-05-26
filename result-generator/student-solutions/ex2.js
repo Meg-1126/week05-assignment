@@ -7,35 +7,34 @@ Create a function named conditionalSum that will be given an array of numbers an
 Warning
 Use some sort of looping. Do Not use Array.prototype.filter()
 */
-
+// filter and reduce
 const conditionalSum = function(values, condition) {
     // Your code here
-    let evenNum = 0;
-    let oddNum = 0;
-    // LOOP
-    for (let i = 0; i < values.length; i++) {
-      if (condition == "even") {
-         if (values[i] % 2 === 0) {
-           evenNum += values[i]; 
-          //  return evenNum;
-         }  
-      } else if (condition == "odd") {
-         if ((values[i] % 2 !== 0) && (values.length > 0)) {
-           oddNum += values[i];
-          //  return oddNum;
-         } 
-      }
-    }
-    // RETURN
-    if (condition == "even") {
-      return evenNum;
-    } else if (condition == "odd") {
-      return oddNum;
-    } else if (values.length === 0) {
+    let evenNum = [];
+    let oddNum = [];
+    let sum;
+    if ((values.length !== 0)&&(condition === "even")) {
+      evenNum = values.filter((item) => {
+        return item % 2 === 0;
+      })
+      // console.log(evenNum);
+     sum = evenNum.reduce(function(a, b){
+       return a + b;
+     })
+     return sum;
+    } else if ((values.length !== 0)&&(condition === "odd")) {
+      oddNum = values.filter((item) => {
+        return item % 2 !== 0;
+      })
+      sum = oddNum.reduce(function(a, b){
+        return a + b;
+      })
+      return sum;
+    } else if ((values.length === 0) && (condition !== undefined) ) {
       return 0;
     }
   };
-  
+  module.exports = conditionalSum;
 // console.log(conditionalSum([1, 2, 3, 4, 5], "even")); // 6
 // console.log(conditionalSum([1, 2, 3, 4, 5], "odd")); // 9
 // console.log(conditionalSum([13, 88, 12, 44, 99], "even")); // 144

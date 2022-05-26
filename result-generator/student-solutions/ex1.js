@@ -8,26 +8,24 @@ Create a function named sumLargestNumbers that will receive an array of numbers 
 
 const sumLargestNumbers = function(data) {
     // Put your solution here
-    let number = 0;
-    let sum = 0;
+    let largestNum = - Infinity;
+    let secondLargestNum = - Infinity;
+        data.forEach((item) => {
+        if (item > largestNum) {
+           secondLargestNum = largestNum;
+           largestNum = item; 
+         }
+        })
+        if (data.length < 2) {
+         return "Error!";
+        } else {
+            return largestNum + secondLargestNum;
+        }
+    }
 
-    if (data.length > 2 ) {
-        let largest = Math.max(...data);
-        let index = data.indexOf(largest);
-        data.splice(index, 1);
-        let secondLargest = Math.max(...data);
-        sum = largest + secondLargest;
-        return sum;
-    } else if (data.length === 2) {
-        number = data[0] + data[1];
-        return number;
-    } else {
-        return "Incorrect data. Give at least 2 numbers.";
-    } 
-};
-  
+module.exports = sumLargestNumbers;
 // console.log(sumLargestNumbers(1)); // Print error message
 // console.log(sumLargestNumbers([1, 10])); // 11
 // console.log(sumLargestNumbers([1, 2, 3])); // 5
 // console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2])); // 126
-console.log(sumLargestNumbers([1, 2, 3, 4, 5])); // 9
+// console.log(sumLargestNumbers([1, 2, 3, 4, 5])); // 9

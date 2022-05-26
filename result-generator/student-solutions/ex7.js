@@ -7,38 +7,35 @@ For this challenge we will implement a function called checkAir(), which will ch
 Note
 Not sure where to get started? It might be useful to start by creating a variable to keep track of how many dirty samples we find as we loop through the array of samples. We can increment or add to this number using the ++ operator. Once you know how many dirty samples there are, we just need to do some simple math to determine if it exceeds the threshold.
 */
-
+// reduce
 const checkAir = function (samples, threshold) {
   // Code here!
-  let numOfSample = samples.length; //Get num of elements in an array
-  let dCounter = 0; //Count dirty sample
-  let ratioOfDirtySample = 0; //For storing ratio of dirty sample in an array
-
-  for (let i = 0; i < numOfSample; i++) { //Check num of dirty sample in an array
-    if (samples[i] === 'dirty') {
-       dCounter++;
-    }
-  }
-  ratioOfDirtySample = dCounter / numOfSample; //Calculate ratio
-
-  if (ratioOfDirtySample > threshold) {
-    return 'Polluted';
+  let result = samples.reduce((accum, currentSample)=> {
+     if (currentSample === "dirty") {
+       return accum + 1;
+     } else {
+       return accum;
+     }
+  }, 0);
+  if ((result/samples.length) > threshold) {
+    return "Polluted";
   } else {
-    return 'Clean';
+    return "Clean";
   }
 };
 
-console.log(checkAir(
-  ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'],
-  0.3
-)); // Polluted
+module.exports = checkAir;
+// console.log(checkAir(
+//   ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'],
+//   0.3
+// )); // Polluted
 
-console.log(checkAir(
-  ['dirty', 'dirty', 'dirty', 'dirty', 'clean'],
-  0.25
-)); // Polluted
+// console.log(checkAir(
+//   ['dirty', 'dirty', 'dirty', 'dirty', 'clean'],
+//   0.25
+// )); // Polluted
 
-console.log(checkAir(
-  ['clean', 'dirty', 'clean', 'dirty', 'clean', 'dirty', 'clean'],
-  0.9
-)) // Clean
+// console.log(checkAir(
+//   ['clean', 'dirty', 'clean', 'dirty', 'clean', 'dirty', 'clean'],
+//   0.9
+// )) // Clean

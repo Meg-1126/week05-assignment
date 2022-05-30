@@ -26,11 +26,30 @@ Create a function named urlDecode that will receive a URL encoded string, and re
 // 2.Store divided string to a variable
 // 3.If divided string has "%20" convert it to a space
 // 4.Create an object using the variables #2-3 
+// 5. Return objects
+//Use indexOf + join
 
 const urlDecode = function(text) {
-  // Put your solution here
+  let obj = {};
+  let arr = [];
+  if (text.indexOf("%20") !== -1) { //if a string has %20 
+    arr = text.split("%20").join(" ");
+  }
+  if  (text.indexOf("&") !== -1) { //if a string has &
+    const pairsArr = arr.split("&");
+    for (let pairStr of pairsArr) {
+     const pairArr = pairStr.split("=");
+     obj[pairArr[0]] = pairArr[1];
+    }
+  } else {
+    arr = text.split("=");
+    obj[arr[0]] = arr[1];
+  }
+  return obj;
 };
 
-console.log(urlDecode("duck=rubber")); //{duck: "rubber"}
-console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain")); // {city: "Vancouver", weather: "lots of rain"}
-console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain").weather); // "lots of rain"
+// console.log(urlDecode("duck=rubber")); //{duck: "rubber"}
+// console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain")); // {city: "Vancouver", weather: "lots of rain"}
+// console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain").weather); // "lots of rain"
+
+module.exports = urlDecode;

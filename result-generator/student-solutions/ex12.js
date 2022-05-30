@@ -19,61 +19,61 @@ Note
 This one is a doozy! We might want to start by creating a helper function called ingredientCheck() that will take in one bakery at a time, along with the recipes.ingredients array to check if the given bakery possesses any of the ingredients from that recipe.
 
 */
-
+//Use array.includes("value"); => return boolean
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-    let recipeIngredients = [];
-   for (let i = 0; i < recipes.length; i++) {
-       for (let j = 0; j < 2; j++) {
-           recipeIngredients += recipes[i].ingredients[j]; 
-
-           if (recipeIngredients===bakeryA || recipeIngredients===bakeryB) {
-               let result = bakeryA[i];
+   for (let recipe of recipes) {
+       if(ingredientCheck(recipe.ingredients, bakeryA)) {
+           if(ingredientCheck(recipe.ingredients, bakeryB)) {
+               return recipe.name; //return recipe name which matches the condition
            }
        }
    }
-  
-   
-//    if ((bakeryA[i] === recipes[i].ingredients[0]) || (bakeryB[i] === recipes[i].ingredients[0]) && (bakeryA[i] === recipes[i].ingredients[1]) || bakeryB[i] === recipes[i].ingredients[1]) 
-//     { 
-//        return recipes[i].name;
-//     }
-
 }
 
-let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
-let bakeryB = ['milk', 'butter', 'cream cheese'];
-let recipes = [
-    {
-        name: 'Coconut Sponge Cake',
-        ingredients: ['coconut', 'cake base'] 
-    },
-    {
-        name: 'Persian Cheesecake',
-        ingredients: ['saffron', 'cream cheese']
-    },
-    {
-        name: 'Custard Surprise',
-        ingredients: ['custard', 'ground beef']
-    }
-];
+const ingredientCheck = function(ingredients, bakery) {
+   const ingredient1 = ingredients[0];
+   const ingredient2 = ingredients[1];
 
-console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Persian Cheesecake
+   if (bakery.includes(ingredient1)) return true;
+   if (bakery.includes(ingredient2)) return true;
+   return false;
+}
 
-// bakeryA = ['potatoes', 'bay leaf', 'raisins'];
-// bakeryB = ['red bean', 'dijon mustard', 'apples'];
-// recipes = [
+// let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
+// let bakeryB = ['milk', 'butter', 'cream cheese'];
+// let recipes = [
 //     {
-//         name: 'Potato Ganache',
-//         ingredients: ['potatoes', 'chocolate']
+//         name: 'Coconut Sponge Cake',
+//         ingredients: ['coconut', 'cake base'] 
 //     },
 //     {
-//         name: 'Sweet Fish',
-//         ingredients: ['anchovies', 'honey']
+//         name: 'Persian Cheesecake',
+//         ingredients: ['saffron', 'cream cheese']
 //     },
 //     {
-//         name: "Nima's Famous Dijon Raisins",
-//         ingredients: ['dijon mustard', 'raisins']
+//         name: 'Custard Surprise',
+//         ingredients: ['custard', 'ground beef']
 //     }
 // ];
 
-// console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Nima's Famous Dijon Raisins
+// console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Persian Cheesecake
+
+bakeryA = ['potatoes', 'bay leaf', 'raisins'];
+bakeryB = ['red bean', 'dijon mustard', 'apples'];
+recipes = [
+    {
+        name: 'Potato Ganache',
+        ingredients: ['potatoes', 'chocolate']
+    },
+    {
+        name: 'Sweet Fish',
+        ingredients: ['anchovies', 'honey']
+    },
+    {
+        name: "Nima's Famous Dijon Raisins",
+        ingredients: ['dijon mustard', 'raisins']
+    }
+];
+
+console.log(chooseRecipe(bakeryA, bakeryB, recipes)); //Nima's Famous Dijon Raisins
+// module.exports = chooseRecipe;
